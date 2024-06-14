@@ -3,34 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personenlijst</title>
+    <title>albums</title>
     <link rel="stylesheet" href="public/css/simple.css">
 </head>
 <body>
-<h1>Personenlijst</h1>
+<h1>mijn Albums</h1>
 <table>
     <tr>
         <th>ID</th>
-        <th>Voornaam</th>
-        <th>Achternaam</th>
-        <th>Telefoonnummer</th>
-        <th>Email</th>
-        <th>Opmerkingen</th>
+        <th>naam</th>
+        <th>artiest</th>
+        <th>release datum</th>
+        <th>link</th>
+        <th>afbeelding</th>
+        <th>prijs</th>
     </tr>
-    <?php foreach ($personen as $persoon): ?>
+    <?php foreach ($albums as $album): ?>
         <tr>
-            <td><?= $persoon->getId() ?></td>
-            <td><?= $persoon->Naam() ?></td>
-            <td><?= $persoon->getAchternaam() ?></td>
-            <td><?= $persoon->getTelefoonnummer() ?></td>
-            <td><?= $persoon->getEmail() ?></td>
-            <td><?= $persoon->getOpmerkingen() ?></td>
+            <td><?= $album->getId() ?></td>
+            <td><?= $album->getNaam() ?></td>
+            <td><?= $album->getArtiesten() ?></td>
+            <td><?= $album->getReleaseDatum() ?></td>
+            <td><?= $album->getURL() ?></td>
+            <td><?= $album->getAfbeelding() ?></td>
+            <td><?= $album->getPrijs() ?></td>
+
         </tr>
     <?php endforeach; ?>
 </table>
 
 <div class="notice">
-    <h2>Persoon Toevoegen:</h2>
+    <h2>album Toevoegen:</h2>
     <?php if (!empty($errors)): ?>
         <div style="color: red;">
             <ul>
